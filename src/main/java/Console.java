@@ -7,6 +7,8 @@ public class Console {
 
     public Console() {
         textToDisplay = new ArrayList<String>();
+        pastActions = new ArrayList<String>();
+        currentText = "";
     }
 
     private void displayText() {

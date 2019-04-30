@@ -5,7 +5,7 @@ public class ActionManager extends Actuatable {
     ArrayList<Action> actions;
     ArrayList<ArrayList<Action>> groups;
 
-    public ActionManager() {
+    public ActionManager(Console console) {
         actions = new ArrayList<Action>();
         groups = new ArrayList<ArrayList<Action>>();
     }

@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Also, this allows a line location to hold more than one line. With this, more than one line can be at the same location.
  */
 
-public class LineLocation extends BookElement{
+public class LineLocation {
     ArrayList<Line> line;
     int [] speakingTract;
     boolean [] displayLine;

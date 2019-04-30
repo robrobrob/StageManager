@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 
-public class Action {
+public class Action implements hasConsoleAccess{
+    Console console;
     ScriptLocation scriptLocation;
     ActionType actionType;
     TheatricalLocation location;
@@ -12,24 +13,28 @@ public class Action {
 
     }
 
-    public Action(ScriptLocation scriptLocation, ActionType type) {
+    public Action(Console console, ScriptLocation scriptLocation, ActionType type) {
+        this.console = console;
         this.scriptLocation = scriptLocation;
         this.actionType = type;
     }
 
-    public Action(ScriptLocation scriptLocation, ActionType type, TheatricalLocation location) {
+    public Action(Console console, ScriptLocation scriptLocation, ActionType type, TheatricalLocation location) {
+        this.console = console;
         this.scriptLocation = scriptLocation;
         this.actionType = type;
         this.location = location;
     }
 
-    public Action(ScriptLocation scriptLocation, ActionType type, String name) {
+    public Action(Console console, ScriptLocation scriptLocation, ActionType type, String name) {
+        this.console = console;
         this.scriptLocation = scriptLocation;
         this.actionType = type;
         this.name = name;
     }
 
-    public Action(ScriptLocation scriptLocation, ActionType type, String name, TheatricalLocation location) {
+    public Action(Console console, ScriptLocation scriptLocation, ActionType type, String name, TheatricalLocation location) {
+        this.console = console;
         this.scriptLocation = scriptLocation;
         this.actionType = type;
         this.name = name;
@@ -100,4 +105,8 @@ public class Action {
 
     }
 
+    @Override
+    public Console getConsole() {
+        return getConsole();
+    }
 }

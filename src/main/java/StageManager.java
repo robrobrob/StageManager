@@ -21,9 +21,7 @@ public class StageManager {
         Actuatable actuatable = new Actuatable();
         actuatable.setConsole(console);
         //Show Setup
-        Show show = new Show();
-        PaperworkElement paperworkElement = new PaperworkElement();
-        paperworkElement.setShow(show);
+        GUIManager guiManager = new GUIManager(console);
 
     }
 }
