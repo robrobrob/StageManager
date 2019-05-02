@@ -1,0 +1,166 @@
+Specification for Stage Manager
+by Robert Hill-Guarino
+
+Version 1.1
+
+Overview:
+Stage Manager is a piece of software that eases the workload of the stage manager by automating time consuming tasks or repetitive tasks. Stage Manager also leverages the data it holds in intersection ways to benefit the production.
+
+Scenarios/Goals:
+- A stage manager needs to be able to print any document created in Stage Manager aside from the prep list.
+- A stage manager needs to change a line in the script. They use the Stage Manager to update the line and then generate a new script (See section on documents). Later, the line needs to be changed back, so the old version is recalled.
+- A stage manager needs to schedule rehearsal for the next day. Stage Manager shows them that there are several approved conflicts for the day and that the lead actor is coming up on their legal amount of hours of work for the work week. The software also knows that the rehearsal room cannot fit the amount of people necessary in it to do the required rehearsal.
+- A stage manager needs to record the blocking of an actor. The stage manager puts the blocking in the script and it is recorded on a slip sheet (See section on documents and intersectional data usage).
+- A stage manager needs to put in a cue and have it recorded in their script at a amorphous position of their choosing.
+- A stage manager needs to note what lines were missed and how they were missed (See section on documents).
+- A stage manager needs to be able to see the contact information of every person on the production and by interacting with the list generate different distribution lists. These lists should be able to be saved and recalled to email different documents to.
+- A stage manager needs tp be able to record notes during rehearsal into a log book. These should then be placed into the rehearsal report as needed.
+- A stage manager needs to be able to generate a rehearsal report about the rehearsal. This should include all the notes taken from the log book and any additional notes (See section on documents).
+- A stage manager needs to be able to generate a daily call (See section on documents).
+- A stage manager needs to be able to generate a prop list for the show. The location of these props will be tracked on a run sheet throughout the show (See section on documents).
+- A stage manager needs to be able to generate a run sheet for the show that shows all the actions that will occur on the deck. Furthermore, additional, supplementary run sheets must be able to be created for the show. These run sheets should be fully customizable and able to be generated on a person by person basis, while also having an option to highlight a single person’s options (See section on documents).
+- A stage manager must be able to generate a page by page and a scene by scene from the current script (See section on documents).
+
+Documents and Goals for Documents:
+
+- All Documents:
+= General:
+* All documents, generally, should have a header and footer. These serve to identify what show and house the documents belong to and what purpose the document serves, who created the document, what order the pages of the document fall in, and what the date of creation of the document was.
+* Certain documents will have specific requirements as to what is in the header and footer.
+* All documents should have a variable font and be able to be printed, aside from the prep list.
+= All documents should have:
+* A header with a title, the name (and image/logo) of the producing company, and the name (and image/logo) of the show.
+* A header may contain the name of the writer of the piece, the songwriter of the piece, the composer of the piece, and/or the director of the piece.
+* A footer with the name and immediate contact info of the stage manager, the text "Subject to Change", the date it was created, the page number, and the total number of pages in the document.
+* A footer may contain the text "Confidential" for use on the contact sheet.
+* Documents that have non-standard headers and footers are: the contact sheet, the slip sheet, 
+
+- Script:
+= General: 
+* A script is a document that holds the lines of a show in the order they are to be said. It also contains the stage directions of a show, both attached to lines and in a free-floating manner. The lines of a script may need to be said on top of one another, around one another, or after one another. 
+* Lines must be able to have blocking and cues attached to them. Cues may also be attached to blocking in the script. Cues and blocking must also be able to be attached to blank sections of the script. Standbys must be able to be written into the script at any time. 
+* Any event (cue, prop movement, or blocking) that happens onstage should be able to be represented in someway in the script. Blocking will be recorded on a slip sheet (See below). 
+* A line may need to be changed in the script. 
+= The script should be able to:
+* Show the lines as they appear in order in the paper script.
+* Show the lines connected to blocking on a slip sheet.
+* Show the lines and any cues attached to them or blocking attached to that line
+* Change any line in the script and have that change be reflected on the date of the document
+* Revert any line back to a previous state and record that state as a new state in the history of states of the line
+* Record a cue to a line. Also, Stage Manager should note when a line has been changed that a cue is attached to in order to ask the designer about the new placement of the cue.
+* Record a cue to a line or piece of blocking.
+* Record a cue to a blank place in the script for a visual cue.
+* Record a line note about a missed line.
+* Have a stage manager call the show from them
+= On page requirements for the script (Header/Footer):
+* Date
+* Page number
+* Total number of pages
+
+- Slip sheet:
+= General:
+* A slip sheet must note the blocking for each line and also show what major changes occur with props, the set, costumes, and entrances and exits. The slip sheet should also have a notes section. The slip sheet may have a ground plan of the space to record anything on. The ground plan should be able to be drawn on. The slip sheet must also have a key to interpret the blocking.
+* A slip sheet needs to have a normal header, but it does not need to have a footer. However, there should be notation somewhere as to what page the slip sheet is connected to in the script.
+= A slip sheet must have:
+* A section to record blocking into, with delineation based on the line the blocking refers to.
+* A chart that holds information on a page-wide level about the entrances/exits on the page, the set changes on the page, the props changes on the page, the costume changes on the page, and any other notes.
+* A ground plan that can be drawn on.
+
+- Line Notes:
+= General:
+* A line notes document holds the lines that have missed or in some way said incorrectly as notated by the stage manager. This document has record of the character saying the line, the page the line is on, the type of note, and the line it occurred on. In addition, it has a place to record the spoken text. The spoken text is then written along with the correct text to inform the actor how it differed from what they said.
+* The notes document should be able to be sent to any member of the cast with either only their notes, or as a group email will all notes included.
+= A line notes document should be able to:
+* Note the character who misspoke the line
+* Note the page on which the line that was misspoken was stated.
+* Note the type of line note it is (Added Word/Phrase, Missed, Called Line, Paraphrased, Inverted Order of Words, Review Entire Line, Jumped Cue/Early, Missed Cue/Late, Word Change).
+* Note the line in question.
+* Note the text spoken by the actor instead of the correct line.
+
+- Contact Sheet
+= General:
+* A contact sheet must have the contact info for everyone in the organization. The contact sheet should be able to supply emails to distribution lists. The contact sheet must be able to be printed with the information for some individuals blocked out for privacy reasons. Contact a person should involve using their preferred form of contact.
+= A contact sheet should have:
+* The name of the person to whom the contact applies.
+* The position they hold in the company or on the show.
+* The email of the person on the contact sheet.
+* The phone number of the person on the contact sheet.
+* The department in which they work
+* Dividers by department
+= On page requirements for the contact sheet (Header/Footer)
+* The text "Confidential" in the foot of the document
+
+- Log Book:
+= General:
+* The log book should be used to record notes for the various departments. These notes should then be available to be seen when creating the rehearsal report.
+= A log book must have:
+* An entry for each day of rehearsal, tech, preview, and performance.
+* A section in each entry for every design department (Scenic, Costumes, Lights, Sound, Video, Automation).
+* A section for comments to/from the Director.
+* A section for comments to/from Marketing/Publicity.
+* A section for signing people in and out and the amount of time they are there for.
+* A section for illness, lateness, and absence.
+* A section for notes to the ASM.
+* A to-do/notes section.
+* Generally, a section for everything on the rehearsal report.
+
+- Rehearsal Report:
+= General:
+* The rehearsal report should be a report of what occurred during rehearsal and who was involved.
+= A rehearsal report must have:
+* A number.
+* A date.
+* The location where the rehearsal occurred.
+* Who was late/absent/sick.
+* A summary of what was done in the rehearsal.
+* A section for what was rehearsed (music, choreography, and staging)
+* The schedule from the daily call prior.
+* The schedule for tomorrow.
+* Notes sections for each department (General, Scenic, Costumes, Hair, Makeup, Lighting, Sound, Video, Music, and Company/General Manager)
+
+- Daily Call:
+= General:
+* A daily call must tell the members of the cast when they are called for rehearsal and at what time. It will specify when the lunch break, if there is one, is and when the day will be over. It will include any other events occurring that day, such as: costume fittings or vocal sessions.
+= A daily call must have:
+* A section for who is called.
+* A section for the time they are called at.
+* A section for what will be done in that time.
+* A section for something else with a person at a time.
+
+- Prop List:
+= General:
+* A prop list must have a list of all the props in the show on it. It should be divided into acts and scenes and show each prop used in each scene. The prop should be shown as a repeat if it is used in multiple scenes.
+= A prop list must have:
+* A section for an ID number for each prop. Even if a prop is cut, the number still remains. If a prop is part of a set of items, like a tea set, it will be 5a or 5e.
+* A section for a date of the last change made to a prop.
+* A section for the type of prop it is and the department it belongs to (usually show by highlighting the row or text as applicable).
+* A section for the amount of the prop.
+* A section for the page it appears on in the scene.
+* A section for the name of the prop.
+* A section for the character/character group/world it belongs to.
+* A section for notes about the prop.
+* A check-box section for whether there is a rehearsal and/or real version of the prop.
+
+- Run Sheet:
+= General:
+* A run sheet must have a row for each action (not including blocking generally) that occurs on the stage. Every prop movement (on and off the stage), set movement, costume change, or other notable event must be recorded.
+* Multiple run sheets must be able to be made.
+= A run sheet must have:
+* A section for when during the show the event occurs (time).
+* A section for the page it occurs on.
+* A section for who does the action (Character/Actor).
+* A section for who helps with the action (ASM/Stagehand).
+* A section for where on the deck the event occurs (SR, SL, US, DS).
+* A section for describing the action itself.
+* A section for what cues the action to occur.
+* A section for notes about the action.
+
+- Scene by Scene and Page by Page
+= General:
+* A scene by scene and a page by page are used to show who is present on each page of the script. It is used to schedule rehearsals and inform the cast of what parts of the show they will be in.
+= A Scene by Scene must have:
+* A section displaying the scene
+* A section displaying the people in the scene
+= A Page by Page must have:
+* Each page notated with a section for each character
+* Each character name must have an accompanying actor name
