@@ -18,10 +18,9 @@ public class StageManager {
     public StageManager() {
         //Non-Show Setup
         Console console = new Console();
-        Actuatable actuatable = new Actuatable();
-        actuatable.setConsole(console);
         //Show Setup
         GUIManager guiManager = new GUIManager(console);
+        console.setGUIManager(guiManager);
 
     }
 }

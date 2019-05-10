@@ -6,17 +6,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.text.ParseException;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Vector;
 
 public class GUIManager implements hasConsoleAccess {
     Console console;
+    JFrame frame;
 
     public GUIManager(Console console){
         this.console = console;
         //Window Setup
-        JFrame frame = new JFrame("Stage Manager");
+        frame = new JFrame("Stage Manager");
         frame.setBounds(100,100,1000,1000);
-        frame.setMinimumSize(new Dimension(400,400));
+        frame.setMinimumSize(new Dimension(1000,800));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         Container container = frame.getContentPane();
         //JMenuBar Setup
@@ -84,9 +88,22 @@ public class GUIManager implements hasConsoleAccess {
         //JToolBar Setup
         JToolBar contextualToolBar = new JToolBar();
         contextualToolBar.setFloatable(false);
-        contextualToolBar.setPreferredSize(new Dimension(400,25));
+        contextualToolBar.setPreferredSize(new Dimension(1000,30));
+        mainGUIArea.add(contextualToolBar,new GridBagConstraints(0,0,1,1,0,0,GridBagConstraints.PAGE_START,GridBagConstraints.HORIZONTAL,new Insets(0,0,0,0),0,0));
+        //Work Area Setup
+        JPanel workspace = new JPanel();
+        workspace.setPreferredSize(new Dimension(1000,750));
+        mainGUIArea.add(workspace, new GridBagConstraints(0,1,1,1,0,0,GridBagConstraints.PAGE_START,GridBagConstraints.BOTH,new Insets(0,0,0,0),0,0));
+        //Console Setup
+        JPanel consoleArea = new JPanel();
+        consoleArea.setLayout(new GridBagLayout());
         JTextArea consoleName = new JTextArea("Console:");
-        mainGUIArea.add(contextualToolBar,new GridBagConstraints(0,0,1,1,0,0,GridBagConstraints.PAGE_START,GridBagConstraints.NONE,new Insets(0,0,0,0),0,0));
+        consoleName.setPreferredSize(new Dimension(50, 20));
+        JTextArea consoleTextArea = new JTextArea();
+        consoleTextArea.setPreferredSize(new Dimension(950,20));
+        consoleArea.add(consoleName, new GridBagConstraints(0,0,1,1,0,0,GridBagConstraints.PAGE_START,GridBagConstraints.HORIZONTAL,new Insets(0,0,0,0),0,0));
+        consoleArea.add(consoleTextArea, new GridBagConstraints(1,0,1,1,0,0,GridBagConstraints.PAGE_START,GridBagConstraints.HORIZONTAL,new Insets(0,0,0,0),0,0));
+        mainGUIArea.add(consoleArea, new GridBagConstraints(0,3,1,1,0,0,GridBagConstraints.PAGE_START,GridBagConstraints.HORIZONTAL,new Insets(0,0,0,0),0,0));
         container.add(mainGUIArea);
         //SetVisible
         frame.pack();
@@ -118,6 +135,7 @@ public class GUIManager implements hasConsoleAccess {
         nameTextArea.setEditable(false);
         nameTextArea.setMinimumSize(textAreaDimensions);
         nameTextArea.setPreferredSize(new Dimension(defaultWidth,defaultHeight));
+        nameTextArea.setOpaque(false);
         //LORTTextArea
         JTextArea LORTTextArea = new JTextArea("LORT?");
         LORTTextArea.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
@@ -125,6 +143,7 @@ public class GUIManager implements hasConsoleAccess {
         LORTTextArea.setEditable(false);
         LORTTextArea.setMinimumSize(textAreaDimensions);
         LORTTextArea.setPreferredSize(new Dimension(defaultWidth,defaultHeight));
+        LORTTextArea.setOpaque(false);
         //musicalTextArea
         JTextArea musicalTextArea = new JTextArea("Musical?");
         musicalTextArea.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
@@ -132,6 +151,7 @@ public class GUIManager implements hasConsoleAccess {
         musicalTextArea.setEditable(false);
         musicalTextArea.setMinimumSize(textAreaDimensions);
         musicalTextArea.setPreferredSize(new Dimension(defaultWidth,defaultHeight));
+        musicalTextArea.setOpaque(false);
         //startDateTextArea
         JTextArea startDateTextArea = new JTextArea("Start Date:");
         startDateTextArea.setComponentOrientation(ComponentOrientation.RIGHT_TO_LEFT);
@@ -139,6 +159,7 @@ public class GUIManager implements hasConsoleAccess {
         startDateTextArea.setEditable(false);
         startDateTextArea.setMinimumSize(textAreaDimensions);
         startDateTextArea.setPreferredSize(new Dimension(60,defaultHeight));
+        startDateTextArea.setOpaque(false);
         //nameTextField
         JTextField nameTextField = new JTextField();
         nameTextField.setPreferredSize(new Dimension(200,defaultHeight));
@@ -168,6 +189,14 @@ public class GUIManager implements hasConsoleAccess {
         }
         //todayButton
         JButton todayButton = new JButton("Today");
+        todayButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                GregorianCalendar now = new GregorianCalendar();
+                int nowInt = now.get(Calendar.MONTH);
+                monthSelection.setSelectedIndex(nowInt + 1);
+            }
+        });
         //createNewShowButton
         JButton createNewShowButton = new JButton("Create Show");
         //JPanels and Setup
@@ -190,11 +219,11 @@ public class GUIManager implements hasConsoleAccess {
         Insets column1Insets = new Insets(10,10,10,0);
         Insets column2Insets = new Insets(10,0,10,10);
         Insets noInsets = new Insets(0,0,0,0);
-        column1.add(nameTextArea, new GridBagConstraints(0,0,1,1,0,0,GridBagConstraints.LINE_START,GridBagConstraints.FIRST_LINE_START,column1Insets,0,0));
+        column1.add(nameTextArea, new GridBagConstraints(0,0,1,1,0,0,GridBagConstraints.LINE_START,GridBagConstraints.FIRST_LINE_START,column2Insets,0,0));
         column2.add(nameTextField, new GridBagConstraints(0,0,2,1,0,0,GridBagConstraints.LINE_START,GridBagConstraints.FIRST_LINE_START,column2Insets,0,0));
-        column1.add(LORTTextArea, new GridBagConstraints(0,1,1,1,0,0,GridBagConstraints.LINE_START,GridBagConstraints.FIRST_LINE_START,column1Insets,0,0));
+        column1.add(LORTTextArea, new GridBagConstraints(0,1,1,1,0,0,GridBagConstraints.LINE_START,GridBagConstraints.FIRST_LINE_START,column2Insets,0,0));
         column2.add(LORTCheckBox, new GridBagConstraints(0,1,1,1,0,0,GridBagConstraints.LINE_START,GridBagConstraints.FIRST_LINE_START,column2Insets,0,0));
-        column1.add(musicalTextArea, new GridBagConstraints(0,2,1,1,0,0,GridBagConstraints.LINE_START,GridBagConstraints.FIRST_LINE_START,column1Insets,0,0));
+        column1.add(musicalTextArea, new GridBagConstraints(0,2,1,1,0,0,GridBagConstraints.LINE_START,GridBagConstraints.FIRST_LINE_START,column2Insets,0,0));
         column2.add(musicalCheckBox, new GridBagConstraints(0,2,1,1,0,0,GridBagConstraints.LINE_START,GridBagConstraints.FIRST_LINE_START,column2Insets,0,0));
         columnArea.add(column1, new GridBagConstraints(0,0,1,1,0,0,GridBagConstraints.LINE_START,GridBagConstraints.FIRST_LINE_START,defaultInsets,0,0));
         columnArea.add(column2, new GridBagConstraints(1,0,1,1,0,0,GridBagConstraints.LINE_START,GridBagConstraints.FIRST_LINE_START,defaultInsets,0,0));
@@ -228,5 +257,9 @@ public class GUIManager implements hasConsoleAccess {
     @Override
     public Console getConsole() {
         return console;
+    }
+
+    public Frame getFrame(){
+        return frame;
     }
 }
