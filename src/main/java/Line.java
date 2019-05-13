@@ -17,7 +17,7 @@ public class Line extends Text{
         return linePortions;
     }
 
-    public boolean isMultipleSpeakers() {
+    public boolean hasMultipleSpeakers() {
         return multipleSpeakers;
     }
 
