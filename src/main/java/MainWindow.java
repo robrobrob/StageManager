@@ -47,7 +47,7 @@ public class MainWindow {
     private JLabel pageNumber;
     private JLabel date;
     private JPanel scriptSheetPageHeader;
-    private JPanel scriptSheetPageActions;
+    private JPanel scriptSheetPageActionsArea;
     private JPanel scriptPagePlace;
     private JPanel blockingRecording;
     private JPanel stageImage;
@@ -69,6 +69,12 @@ public class MainWindow {
     private JPanel slipSheetShowInfoArea;
     private JLabel slipSheetShowTitleText;
     private JLabel slipSheetSubText;
+    private JPanel separator1;
+    private JPanel separator2;
+    private JPanel actionTextArea;
+    private JLabel actionText;
+    private JPanel actionArea;
+    private JPanel scriptSheetPageHeaderContentArea;
 
     public MainWindow(){
 
